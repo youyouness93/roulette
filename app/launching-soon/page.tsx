@@ -2,7 +2,7 @@ import AnimatedBackground from '@/components/animated-background'
 import NewsletterForm from '@/components/newsletter-form'
 import Image from 'next/image'
 
-export default function Home() {
+export default function LaunchingSoon() {
   return (
     <main className="min-h-screen bg-[#0D0F15] relative overflow-hidden">
       <AnimatedBackground />

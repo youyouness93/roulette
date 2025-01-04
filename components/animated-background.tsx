@@ -1,11 +1,18 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -84,7 +91,7 @@ export default function AnimatedBackground() {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, [isClient])
 
   return <canvas ref={canvasRef} className="fixed inset-0 z-0" />
 }
