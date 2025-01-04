@@ -28,6 +28,7 @@ export default function AnimatedBackground() {
       logo: string
 
       constructor() {
+        if (!canvas) throw new Error('Canvas is not initialized')
         this.x = Math.random() * canvas.width
         this.y = Math.random() * canvas.height
         this.size = Math.random() * 3 + 1
@@ -38,6 +39,7 @@ export default function AnimatedBackground() {
       }
 
       update() {
+        if (!canvas) return
         this.x += this.speedX
         this.y += this.speedY
 
@@ -86,4 +88,3 @@ export default function AnimatedBackground() {
 
   return <canvas ref={canvasRef} className="fixed inset-0 z-0" />
 }
-
