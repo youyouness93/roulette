@@ -3,25 +3,56 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 228 13% 7%;
+  --foreground: 0 0% 100%;
+  --card: 228 15% 13%;
+  --card-foreground: 0 0% 100%;
+  --popover: 228 15% 13%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 187 100% 50%;
+  --primary-foreground: 228 13% 7%;
+  --secondary: 320 100% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 65%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 187 100% 50%;
+  --accent-foreground: 228 13% 7%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 228 15% 13%;
+  --input: 228 15% 13%;
+  --ring: 187 100% 50%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Hexagon clip path */
+.clip-hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
