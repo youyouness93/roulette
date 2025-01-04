@@ -3,16 +3,9 @@ import { Orbitron } from 'next/font/google'
 
 const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' })
 
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
+export const metadata = {
   title: 'RouletteVerse',
-  description: 'Next generation of crypto roulette gaming',
-  icons: {
-    icon: '/favicon1.svg',
-    shortcut: '/favicon1.svg',
-    apple: '/favicon1.svg',
-  },
+  description: 'Experience the Future of Crypto Roulette',
 }
 
 export default function RootLayout({
