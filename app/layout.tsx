@@ -6,6 +6,9 @@ const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' })
 export const metadata = {
   title: 'RouletteVerse',
   description: 'Experience the Future of Crypto Roulette',
+  icons: {
+    icon: '/favicon1.svg',
+  },
 }
 
 export default function RootLayout({
